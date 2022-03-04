@@ -1,0 +1,43 @@
+.home{    
+    width: 100%;
+   
+    background-image: url('https://img.freepik.com/foto-gratis/endecha-plana-surtido-verduras-bolsa-supermercado_23-2148853353.jpg?w=740');
+    background-size: contain;
+    background-repeat:no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.menuStats{
+    width: 30%;
+    margin: 400px 0% 300px 35%;  
+    padding: 5px;  
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.menuStats ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.menuStats ul li{
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    
+
+}
+
+
+
+
