@@ -4,7 +4,7 @@ import './Pages.css'
 
 const LoginContainer = () => {
   return (
-    <div className="container mt-5 pt-5 login">     
+    <div className="container mt-5 pt-5 login">
     <Login/>
     </div>
   )

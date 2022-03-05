@@ -1,54 +1,60 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import LoginForm from './LoginForm'
 
 const Login = () => {
-    //const [btn, setBtn] = useState(false)
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [login, setLogin] = useState(false)
+    let navigate = useNavigate();
+
+
+    const logIn = {
+        email: '1@gmail.com',
+        password: 'react'
+    }
+
+    useEffect(() => {
+        localStorage.setItem('token', JSON.stringify(logIn))
+    })
 
     const onHandleSubmit = (e) => {
         e.preventDefault()
-        console.log(email, password)
+        let registrado = JSON.parse(localStorage.getItem('token'))
 
-        const msj = {
-            email: email,
-            password: password
-        }
+        // console.log(email, password)
+        // console.log(registrado.email)
 
-        localStorage.setItem('storageLogin', JSON.stringify(msj))
-
-        
-
-        usuarioRegistrado()
-        setLogin(true)
-
-
-
-        
-    }
-
-    const usuarioRegistrado = () => {
-
-        let registrado = localStorage.getItem('storageLogin')
         if (registrado.email !== email) {
-            alert('usuario no registrado')
-          
+            alert('Wrong email')
+        } else if (registrado.password !== password) {
+            alert('Wrong password')
         }
+
+        if (registrado.email === email && registrado.password === password) {
+                     
+                navigate('/home');
+                setLogin(true)
+
+          
+
+        }
+
+
     }
 
 
 
-    const onHandleLogOut = () => {
-        localStorage.removeItem('msj')
-        setLogin(false)
-    }
+
+
+
 
 
     return (
         <div>
-            <LoginForm onHandleSubmit={onHandleSubmit} email={email} setEmail={setEmail} password={password} setPassword={setPassword}
-                onHandleLogOut={onHandleLogOut}
+            <LoginForm onHandleSubmit={onHandleSubmit} email={email} setEmail={setEmail}
+                password={password} setPassword={setPassword}
                 login={login} setLogin={setLogin}
             />
         </div>
