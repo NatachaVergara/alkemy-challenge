@@ -1,20 +1,19 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import { Button, Card } from 'react-bootstrap'
 
-const DishDetail = () => {
+
+const DishDetail = ({btn, title, id, img, desc}) => {
+    
   return (
-      <div>
-          <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                      Some quick example text to build on the card title and make up the bulk of
-                      the card's content.
-                  </Card.Text>
-                  <Button variant="primary">Eliminar</Button>
-              </Card.Body>
-          </Card>
+      <div className="col col-md-3 m-3" key={id}>
+          <div className="card" style={{width: '18rem'}}>
+              <img src={img} className="card-img-top" alt={title} />
+                  <div className="card-body">
+                  <h5 className="card-title">{title} </h5>
+                      <p className="card-text">{desc} </p>
+                  <a href="#" className="btn btn-primary">{btn} </a>
+                  </div>
+          </div>
     </div>
   )
 }
