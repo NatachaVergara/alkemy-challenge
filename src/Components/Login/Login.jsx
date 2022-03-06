@@ -11,7 +11,7 @@ const Login = () => {
 
 
     const logIn = {
-        email: '1@gmail.com',
+        email: 'challenge@alkemy.org',
         password: 'react'
     }
 
