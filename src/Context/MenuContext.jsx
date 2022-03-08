@@ -28,11 +28,20 @@ const MenuContextProvider = ({ children }) => {
         //Creo una variable que me permitira encontrar el item, si hay se actualiza, de lo contrario se agrega a mi menuList
         let inMenuList = menuList.find((menuItem) => menuItem.id === receta.id)
 
+
         if (inMenuList) {
             setMenuList([...menuList])
         } else {
-            setMenuList([...menuList, {...receta}])
+            setMenuList([...menuList, { ...receta }])
         }
+
+        if (menuList.length === 4) {
+            setMenuList([...menuList])
+            alert('Ha superado el limite')
+        }
+        
+
+
     };
     //Guardo mi menuList en local Host
     useEffect(() => {

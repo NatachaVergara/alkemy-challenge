@@ -8,9 +8,7 @@ const DishDetail = ({ btn, title, id, img, desc, width, receta, fs }) => {
   const { addMenuItem, eraseMenuItem } = useMenuContext()
   //Agrego los items a mi menuList del context
   
-  if (btn === 'borrar') {
-  console.log('Soy un boton de borrar')
-}
+ 
 
 
   return (
