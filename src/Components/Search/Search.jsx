@@ -47,7 +47,7 @@ const Search = () => {
       </form>
       <div className="row ms-md-5">
       {recetas.map(item => {
-      return  <DishDetail btn='agregar' id={item.id} title={item.title} img={item.image} desc={item.summary} />
+        return <DishDetail width="10" key={item.id} btn='agregar' id={item.id} title={item.title} img={item.image} desc={item.summary}  />
 
         
       })}
