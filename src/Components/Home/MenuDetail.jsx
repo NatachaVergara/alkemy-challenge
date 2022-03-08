@@ -4,7 +4,7 @@ import DishDetail from '../DishDetail/DishDetail'
 
 const MenuDetail = () => {
   const { menuList} = useMenuContext()
-
+  
 
   return (
     <div className="col-6  row row-cols-1 d-flex flex-row flex-wrap">
