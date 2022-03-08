@@ -2,11 +2,11 @@
 import React from 'react'
 
 
-const DishDetail = ({btn, title, id, img, desc}) => {
-    
+const DishDetail = ({ btn, title, id, img, desc, width}) => {
+    console.log(desc)
   return (
-      <div className="col col-md-3 m-3" key={id}>
-          <div className="card" style={{width: '18rem'}}>
+      <div className="col-5 m-2" key={id}>
+          <div className="card" style={{ width: width}}>
               <img src={img} className="card-img-top" alt={title} />
                   <div className="card-body">
                   <h5 className="card-title">{title} </h5>

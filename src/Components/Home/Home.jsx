@@ -5,6 +5,7 @@ import './home.css'
 import Menu from './Menu'
 import Navbar from "../Navbar/Navbar";
 import Search from '../Search/Search';
+import MenuDetail from './MenuDetail';
 
 const Home = () => {
   
@@ -14,7 +15,12 @@ const Home = () => {
         <Navbar />
       </header>
       <main className="home">
-        <Menu />
+        <div className="container d-flex justify-content-center align-items-center row mt-5 pt-5 mb-5 pb-5">         
+            <MenuDetail />         
+            <Menu />
+
+        </div>
+        
        <Search/>
       </main>
     </>
