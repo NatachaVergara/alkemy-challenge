@@ -21,7 +21,7 @@ const getLocalMenu = () => {
 
 const MenuContextProvider = ({ children }) => {
     const [menuList, setMenuList] = useState(getLocalMenu())
-
+    
     //Creo la funcion que me va a permitir ir agregando items a mi menuDetail
     const addMenuItem = (receta) => {
         console.log(menuList)
@@ -55,18 +55,25 @@ const MenuContextProvider = ({ children }) => {
     }
 
     //Creo una funcion que me sume el precio total de todos los menus
-    // const totalPrice = () => {
-    //     return menuList.reduce((acum, item)=>(acum += item.price * item.cantidad), 0)
-    // }
+    const totalPrice = () => {
+        return menuList.reduce((acum, item) => (acum += item.pricePerServing + menuList.length ), 0)
+    }
 
-    // const erasedMenuList = () => {
-    //     setMenuList([])
-    // }
+
+    const readyTime = () => {
+        return menuList.reduce((accum, item) => (accum += item.readyInMinutes + menuList.length ), 0)
+    }
+
+    const healthScorePromedio = () => {
+       let sumaHealthScore = menuList.reduce((accum, item) => (accum += item.healthScore + menuList.length), 0)
+        let promedio = sumaHealthScore  / menuList.length
+        return promedio
+    }
 
 
     return (
         <MenuContext.Provider
-            value={{ menuList, addMenuItem, eraseMenuItem }}>
+            value={{ menuList, addMenuItem, eraseMenuItem, totalPrice, readyTime, healthScorePromedio }}>
             {children}
         </MenuContext.Provider>
     )

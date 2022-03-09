@@ -1,0 +1,22 @@
+.menuContainer{   
+    height: 800px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+ .menuStats{
+    height:200px;    
+    border: 2px solid black;  
+    border-radius: 15px;    
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    
+}
+
+.stats{
+    margin:15px
+} 
