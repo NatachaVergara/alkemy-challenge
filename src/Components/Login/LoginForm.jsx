@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from 'formik';
+import ModalLogin from '../Modales/ModalLogin';
 
 const LoginForm = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const [startModal, setStartModal] = useState(false)
+    
+    const [modalMsj, setModalMsj] = useState('')
+    //Funcion para el enviar al modal
+    const handleClose = () => setStartModal(false);
+
     let navigate = useNavigate();
 
     const user = {
@@ -11,9 +18,9 @@ const LoginForm = () => {
         password: 'react'
     }
 
-    
-        localStorage.setItem('token', JSON.stringify(user))
-    
+
+    localStorage.setItem('token', JSON.stringify(user))
+
 
     return (
         <>
@@ -41,37 +48,49 @@ const LoginForm = () => {
 
 
 
-                onSubmit={(valores, {resetForm}) => {
-                    console.log(valores)
-                    
-                    // resetForm()
-                    let isUser = JSON.parse(localStorage.getItem('token'))
+                onSubmit={(valores, { resetForm }) => {
+                   let isUser = JSON.parse(localStorage.getItem('token'))
 
-                    if (isUser.email !== valores.email) {
-                        alert('Wrong email')
+                    if (isUser.email !== valores.email && isUser.password === valores.password) {                                               
+                        setStartModal(true)                                              
+                        setModalMsj(`El correo electronico ingresado no se encuentra registrado, asegurese de haberlo ingresado correctamente`)
+
                     }
 
-                    if (isUser.password !== valores.password) {
-                        alert('Wrong password')
-                    } 
+                    if (isUser.email === valores.email && isUser.password !== valores.password) {                      
+                        
+                        setStartModal(true)
+                        setModalMsj(`La contraseña ingresada no corresponde con el mail ingresado, asegurese de habelo ingresado correctamente`)
+                       
+                    }
+
+                    if (isUser.email !== valores.email && isUser.password !== valores.password) {
+                        setStartModal(true)  
+                        setModalMsj(`Tanto el email como la contraseña ingresados están incorrectos, por favor revise la información y vuelva a intentar`)
+                    }
+
+
 
                     if (isUser.email === valores.email && isUser.password === valores.password) {
                         resetForm()
+                        setStartModal(true)
+                        setIsLoggedIn(true)
                         console.log('usuario logeado/Formik funcionando')
+                        setModalMsj('Bienvenido/a nuevamente, lo estamos enviado a su menu')
                         setTimeout(() => {
-                            navigate('/home');
-                            setIsLoggedIn(true)
+                            setStartModal(false)
+                            navigate('/home')                            
                         }, 5000)
 
-                        //Agregar un Modal
+                       
                     }
-                   
+
                 }}
 
 
 
             >
-                {({errors,touched}) => (
+                {({ errors, touched }) => (
                     <Form >
                         <div className="mb-3 d-flex flex-column justify-content-center align-item-center">
                             <Field
@@ -81,12 +100,12 @@ const LoginForm = () => {
                                 name="email"
                                 aria-describedby="emailHelp"
                                 placeholder="challenge@alkemy.org"
-                                // value={values.email}
-                                // onChange={handleChange}
-                                // onBlur={handleBlur}
+                            // value={values.email}
+                            // onChange={handleChange}
+                            // onBlur={handleBlur}
                             />
 
-                            {touched.email && errors.email ? <div className="form-text text-danger fs-6">{ errors.email}</div> :<div id="emailHelp" className="form-text ">We'll never share your email with anyone else.</div>}
+                            {touched.email && errors.email ? <div className="form-text text-danger fs-6">{errors.email}</div> : <div id="emailHelp" className="form-text ">We'll never share your email with anyone else.</div>}
                         </div>
                         <div className="mb-3">
                             <Field
@@ -95,18 +114,23 @@ const LoginForm = () => {
                                 id="password"
                                 name="password"
                                 placeholder="react"
-                                // value={values.password}
-                                // onChange={handleChange}
-                                // onBlur={handleBlur}
+                            // value={values.password}
+                            // onChange={handleChange}
+                            // onBlur={handleBlur}
                             />
                             {touched.password && errors.password ? <div className="form-text text-danger fs-6">{errors.password}</div> : null}
                         </div>
-                        <button type="submit" className="btn btn-primary">Login</button>
+                        <button type="submit"
+                            className="btn btn-primary"
+
+                            >Login</button>
+                        <ModalLogin handleClose={handleClose} show={startModal} modalMsj={modalMsj} isLoggedIn={isLoggedIn} />
                     </Form>
 
                 )}
-
             </Formik>
+           
+
         </>
     )
 }
