@@ -6,8 +6,7 @@ import { useMenuContext } from '../../Context/MenuContext'
 const DishDetail = ({ btn, title, id, img, desc, width, receta, fs }) => {
 
   const { addMenuItem, eraseMenuItem } = useMenuContext()
-  //Agrego los items a mi menuList del context
-  // desc = JSON.parse({desc});
+ 
 
   
 

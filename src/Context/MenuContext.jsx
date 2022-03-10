@@ -23,13 +23,14 @@ const MenuContextProvider = ({ children }) => {
     const [menuList, setMenuList] = useState(getLocalMenu())
     
     //Creo la funcion que me va a permitir ir agregando items a mi menuDetail
-    const addMenuItem = (receta) => {
+    const addMenuItem = (receta ) => {
         console.log(menuList)
         //Creo una variable que me permitira encontrar el item, si hay se actualiza, de lo contrario se agrega a mi menuList
         let inMenuList = menuList.find((menuItem) => menuItem.id === receta.id)
 
 
         if (inMenuList) {
+
             setMenuList([...menuList])
         } else {
             setMenuList([...menuList, { ...receta }])
@@ -42,10 +43,15 @@ const MenuContextProvider = ({ children }) => {
         
        
     };
+
+
+    
     //Guardo mi menuList en local Host
     useEffect(() => {
         localStorage.setItem('menuListLS', JSON.stringify(menuList))
     }, [menuList])
+     
+
 
 
     //Creo una funcion que va a permitir borrar un elemento de mi menuList en local Host
@@ -72,7 +78,7 @@ const MenuContextProvider = ({ children }) => {
 
     return (
         <MenuContext.Provider
-            value={{ menuList, addMenuItem, eraseMenuItem, totalPrice, readyTime, healthScorePromedio }}>
+            value={{ menuList, addMenuItem, eraseMenuItem, totalPrice, readyTime, healthScorePromedio }}>            
             {children}
         </MenuContext.Provider>
     )
