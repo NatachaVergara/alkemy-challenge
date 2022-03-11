@@ -3,7 +3,7 @@ import React from 'react'
 
 import './home.css'
 import Navbar from "../Navbar/Navbar";
-import Search from '../Search/Search';
+import Search from '../Search/SearchContainer';
 import MenuContainer from '../Menu/MenuContainer';
 //import MenuDetail from './MenuDetail';
 

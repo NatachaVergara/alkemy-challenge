@@ -8,9 +8,9 @@ import DishDetailContainer from '../DishDetail/DishDetailContainer'
 
 const Search = () => {
   const [recetas, setRecetas] = useState([]);
-  const [buscar, setBuscar] = useState('');
-  const [query, setQuery] = useState('')
+   const [query, setQuery] = useState('')
 
+  console.log(query)
   const getMenu = async () => {
     await UseApi({query, setRecetas})
   }
@@ -19,22 +19,10 @@ const Search = () => {
     getMenu()
   }, [query] )
   
-  const updateInput = (e) => {
-    setBuscar(e.target.value)
-  }
-
-
-  const onHandleClick = (e) => {
-    e.preventDefault();
-    setQuery(buscar)
-    setBuscar('')
-  }
-
   
   return (
-    <div >    
-      <h1 className="text-center mb-5">Buscar Menu</h1>
-      <SearchForm   buscar={buscar} updateInput={updateInput}  onHandleClick={onHandleClick} />
+    <div className="mt-5 pt-5">
+      <SearchForm setQuery={setQuery} />
       <div className="row ms-md-5">
         <DishDetailContainer  recetas={recetas} />
 

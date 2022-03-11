@@ -2,7 +2,7 @@ import React from 'react'
 import DishDetail from './DishDetail'
 
 const DishDetailContainer = ({ recetas }) => {
-
+  console.log(recetas)
  
 
   

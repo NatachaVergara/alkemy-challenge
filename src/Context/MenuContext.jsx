@@ -82,17 +82,19 @@ const MenuContextProvider = ({ children }) => {
 
     //Creo una funcion que me sume el precio total de todos los menus
     const totalPrice = () => {
-        return menuList.reduce((acum, item) => (acum += item.pricePerServing + menuList.length), 0)
+        let total = menuList.reduce((acum, item) => (acum += item.pricePerServing + menuList.length), 0)
+        return total.toFixed(2)
     }
 
 
     const readyTime = () => {
-        return menuList.reduce((accum, item) => (accum += item.readyInMinutes + menuList.length), 0)
+        let totalTime = menuList.reduce((accum, item) => (accum += item.readyInMinutes + menuList.length), 0)
+        return totalTime.toFixed(0)
     }
 
     const healthScorePromedio = () => {
         let sumaHealthScore = menuList.reduce((accum, item) => (accum += item.healthScore + menuList.length), 0)
-        let promedio = sumaHealthScore / menuList.length
+        let promedio = Math.round(sumaHealthScore / menuList.length)
         return promedio
     }
 
