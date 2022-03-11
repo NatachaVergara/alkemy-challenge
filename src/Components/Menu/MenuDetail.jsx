@@ -10,7 +10,7 @@ const MenuDetail = () => {
     <div className="menuDetail col-6  row row-cols-1 d-flex flex-row flex-wrap">
       {
         menuList.map(menu => {
-          return <DishDetail btn='borrar' key={menu.id} id={menu.id} img={menu.image} width='10' title={menu.title} fs='6' />
+          return <DishDetail btn='borrar' key={menu.id} id={menu.id} img={menu.image} width='10' title={menu.title} vegan={menu.vegan} fs='6' />
         })
       }
      </div>

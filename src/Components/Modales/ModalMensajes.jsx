@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal'
 import Spinner from '../Spinners/Spinner'
 
-function ModalLogin({ show, handleClose, modalMsj, isLoggedIn }) {
+function ModalMensajes({ show, handleClose, modalMsj, isLoggedIn }) {
     return (
         <>
             <Modal show={show} onHide={handleClose}>
@@ -21,4 +21,4 @@ function ModalLogin({ show, handleClose, modalMsj, isLoggedIn }) {
     )
 }
 
-export default ModalLogin
+export default ModalMensajes

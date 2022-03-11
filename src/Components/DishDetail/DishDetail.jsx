@@ -3,7 +3,7 @@ import React from 'react'
 import { useMenuContext } from '../../Context/MenuContext'
 
 
-const DishDetail = ({ btn, title, id, img, desc, width, receta, fs }) => {
+const DishDetail = ({ btn, title, id, img, desc, width, receta, fs, vegan }) => {
 
   const { addMenuItem, eraseMenuItem } = useMenuContext()
  
@@ -20,7 +20,8 @@ const DishDetail = ({ btn, title, id, img, desc, width, receta, fs }) => {
           <img src={img} className="card-img-top" alt={title} />
           <div className="card-body">
             <h5 className="card-title fs-6" >{title} </h5>
-            <p className="card-text text-danger text-center" dangerouslySetInnerHTML={{ __html: desc}}   />
+            <p className="card-text text-danger text-center" dangerouslySetInnerHTML={{ __html: desc }} />
+            <p>Es vegano : {vegan === true ? 'true' : 'false'} </p>
             {btn === 'agregar' ? <button onClick={() => addMenuItem(receta)}
               className="btn btn-primary"  >{btn}
             </button> : 

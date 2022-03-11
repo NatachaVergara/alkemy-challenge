@@ -11,8 +11,6 @@ const Search = () => {
   const [buscar, setBuscar] = useState('');
   const [query, setQuery] = useState('')
 
-
-
   const getMenu = async () => {
     await UseApi({query, setRecetas})
   }
@@ -33,9 +31,6 @@ const Search = () => {
   }
 
   
-
-  
-
   return (
     <div >    
       <h1 className="text-center mb-5">Buscar Menu</h1>

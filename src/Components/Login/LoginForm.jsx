@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from 'formik';
-import ModalLogin from '../Modales/ModalLogin';
+import ModalMensajes from '../Modales/ModalMensajes';
 
 const LoginForm = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -124,7 +124,7 @@ const LoginForm = () => {
                             className="btn btn-primary"
 
                             >Login</button>
-                        <ModalLogin handleClose={handleClose} show={startModal} modalMsj={modalMsj} isLoggedIn={isLoggedIn} />
+                        <ModalMensajes handleClose={handleClose} show={startModal} modalMsj={modalMsj} isLoggedIn={isLoggedIn} />
                     </Form>
 
                 )}
