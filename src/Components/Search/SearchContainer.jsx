@@ -25,7 +25,6 @@ const Search = () => {
       <SearchForm setQuery={setQuery} />
       <div className="dishDetailSearch row m-auto">
         <DishDetailContainer  recetas={recetas} />
-
       </div>
     </div>
   )
