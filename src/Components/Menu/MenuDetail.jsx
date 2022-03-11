@@ -3,16 +3,20 @@ import { useMenuContext } from '../../Context/MenuContext'
 import DishDetail from '../DishDetail/DishDetail'
 
 const MenuDetail = () => {
-  const { menuList} = useMenuContext()
-  
+  const { menuList} = useMenuContext() 
 
   return (
-    <div className="menuDetail col-6  row row-cols-1 d-flex flex-row flex-wrap">
+    <div className="dishDetailContainer row">
       {
         menuList.map(menu => {
-          return <DishDetail btn='borrar' key={menu.id} id={menu.id} img={menu.image} width='10' title={menu.title} vegan={menu.vegan} fs='6' />
+          return <DishDetail btn='borrar' key={menu.id} id={menu.id} img={menu.image} width='15rem' title={menu.title} vegan={menu.vegan} pClass='col-6 mb-5'  />
         })
       }
+      
+      {/* <DishDetail />
+      <DishDetail />
+      <DishDetail />
+      <DishDetail /> */}
      </div>
   )
 }

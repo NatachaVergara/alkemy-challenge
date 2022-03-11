@@ -7,7 +7,7 @@ const SearchForm = ({ setQuery }) => {
   return (
     <>
       <h1 className="text-center mb-5">Buscar Menu</h1>
-      <div className="d-flex mb-5 w-50">
+      <div className="d-flex mb-5 ms-5 ps-5 ">
         <Formik
           initialValues={
             { buscar: '' }

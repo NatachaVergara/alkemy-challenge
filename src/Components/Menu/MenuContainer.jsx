@@ -6,7 +6,7 @@ import './menu.css'
 
 const MenuContainer = () => {
   return (
-    <div className="menuContainer container row">
+    <div className="menuContainer ">
       <MenuDetail />
       <MenuStats />
     </div>

@@ -1,11 +1,9 @@
 import React from 'react'
-
-
 import './home.css'
 import Navbar from "../Navbar/Navbar";
 import Search from '../Search/SearchContainer';
 import MenuContainer from '../Menu/MenuContainer';
-//import MenuDetail from './MenuDetail';
+
 
 const Home = () => {
 
@@ -14,10 +12,14 @@ const Home = () => {
       <header>
         <Navbar />
       </header>
-      <main className="home container">
-       <MenuContainer />        
-       <Search />
-      </main>
+     
+        <section className="menu">
+          <MenuContainer />   
+        </section>
+        <section className="search ">
+          <Search />
+        </section>
+     
     </>
   )
 }

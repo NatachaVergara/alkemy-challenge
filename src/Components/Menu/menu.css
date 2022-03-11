@@ -1,22 +1,39 @@
-.menuContainer{   
-    height: 800px;
+.menuContainer{
+    width: 95%;
+    margin: auto;
     display:flex;
-    justify-content: center;
-    align-items: center;
+    justify-content:center;
+    align-items:center;
+
+    position: relative;
+
+
+}
+
+.dishDetailContainer{
+    width: 50%;    
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;    
+    position:absolute;
+    left:0
 }
 
 
- .menuStats{
-    height:200px;    
-    border: 2px solid black;  
-    border-radius: 15px;    
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
+.menuStats{
+    padding-left:80px;
+    position:absolute;
+    right: 165px;
     
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
 .stats{
-    margin:15px
-} 
+    margin:15px;
+    font-size: 28px;
+}

@@ -21,9 +21,9 @@ const Search = () => {
   
   
   return (
-    <div className="mt-5 pt-5">
+    <div className="mt-md-5 pt-md-5">
       <SearchForm setQuery={setQuery} />
-      <div className="row ms-md-5">
+      <div className="dishDetailSearch row m-auto">
         <DishDetailContainer  recetas={recetas} />
 
       </div>

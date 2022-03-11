@@ -3,20 +3,15 @@ import React from 'react'
 import { useMenuContext } from '../../Context/MenuContext'
 
 
-const DishDetail = ({ btn, title, id, img, desc, width, receta, fs, vegan }) => {
+const DishDetail = ({ btn, title, id, img, desc, width, receta, pClass, vegan }) => {
 
   const { addMenuItem, eraseMenuItem } = useMenuContext()
- 
-
-  
-
-
 
   return (
 
-   <>
-       <div className="col-5 m-2" key={id}>
-        <div className="card" style={{ width: width }}>
+    <>
+      <div className={pClass} key={id}>
+        <div className="card " style={{ width: width }}>
           <img src={img} className="card-img-top" alt={title} />
           <div className="card-body">
             <h5 className="card-title fs-6" >{title} </h5>
@@ -24,11 +19,12 @@ const DishDetail = ({ btn, title, id, img, desc, width, receta, fs, vegan }) => 
             <p>Es vegano : {vegan === true ? 'true' : 'false'} </p>
             {btn === 'agregar' ? <button onClick={() => addMenuItem(receta)}
               className="btn btn-primary"  >{btn}
-            </button> : 
+            </button> :
               <button onClick={() => eraseMenuItem(id)}
                 className="btn btn-primary"  >{btn}
-              </button> }
-            
+              </button>
+            }
+
           </div>
         </div>
       </div>

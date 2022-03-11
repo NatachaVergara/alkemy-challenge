@@ -12,9 +12,9 @@ function App() {
   return (
     <MenuContextProvider>
     <BrowserRouter>
-      <div className="container d-flex flex-column">
+      <>
         <RoutesApp />
-      </div>
+      </>
     </BrowserRouter>
     </MenuContextProvider>
   );
