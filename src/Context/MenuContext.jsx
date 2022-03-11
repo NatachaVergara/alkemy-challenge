@@ -45,11 +45,11 @@ const MenuContextProvider = ({ children }) => {
 
         if (isVegan.length === 2) {
             setMenuList([...menuList])
-            text = 'Puede agregar solo hasta 2 platos no veganos'
+            text = 'Puede agregar solo hasta 2 platos veganos'
             errorDishes(text)
         } else if (!isVegan.length === 2) {
             setMenuList([...menuList])
-             text = 'Puede agregar solo hasta 2 platos veganos'
+             text = 'Puede agregar solo hasta 2 platos no veganos'
              errorDishes(text)
         }
 
