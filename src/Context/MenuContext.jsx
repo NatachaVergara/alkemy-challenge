@@ -29,8 +29,7 @@ const MenuContextProvider = ({ children }) => {
         let inMenuList = menuList.find((menuItem) => menuItem.id === receta.id)
         
         let isVegan = menuList.filter(e => e.vegan === receta.vegan)
-        let notVegan = menuList.filter(e =>e.vegan !== receta.vegan)
-        console.log(notVegan)
+        
         
         let text = ''   
         if (inMenuList) {
@@ -45,13 +44,10 @@ const MenuContextProvider = ({ children }) => {
 
         if (isVegan.length === 2) {
             setMenuList([...menuList])
-            text = 'Puede agregar solo hasta 2 platos veganos'
+            text = 'Puede agregar solo 2 platos veganos o 2 no veganos'
             errorDishes(text)
-        } else if (!isVegan.length === 2) {
-            setMenuList([...menuList])
-             text = 'Puede agregar solo hasta 2 platos no veganos'
-             errorDishes(text)
-        }
+        } 
+        
 
 
         
