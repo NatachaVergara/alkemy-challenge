@@ -5,14 +5,32 @@ import UseApi from '../../Hooks/UseApi'
 import SearchForm from './SearchForm'
 import DishDetailContainer from '../DishDetail/DishDetailContainer'
 
+const getLocalApi = () => {
+  let items = localStorage.getItem('apiSearchLS')
+
+  if (items) {
+    return JSON.parse(localStorage.getItem('apiSearchLS'))
+  } else {
+    return []
+  }
+}
+
 
 const Search = () => {
-  const [recetas, setRecetas] = useState([]);
-   const [query, setQuery] = useState('')
+  const [recetas, setRecetas] = useState(getLocalApi());
+  const [query, setQuery] = useState('')
+ 
 
+  useEffect(() => {
+    localStorage.setItem('apiSearchLS', JSON.stringify(recetas))
+  }, [recetas])
+  
+ 
   console.log(query)
   const getMenu = async () => {
-    await UseApi({query, setRecetas})
+    await UseApi({
+      query, setRecetas
+})
   }
   
   useEffect(() => {
@@ -21,12 +39,12 @@ const Search = () => {
   
   
   return (
-    <div className="mt-md-5 pt-md-5">
+    <>
       <SearchForm setQuery={setQuery} />
-      <div className="dishDetailSearch row m-auto">
+      <div className="dishDetailSearch container ms-md-5 row">
         <DishDetailContainer  recetas={recetas} />
       </div>
-    </div>
+    </>
   )
 }
 

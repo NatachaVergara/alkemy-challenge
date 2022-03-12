@@ -4,10 +4,7 @@
     display:flex;
     justify-content:center;
     align-items:center;
-
     position: relative;
-
-
 }
 
 .dishDetailContainer{
@@ -36,4 +33,53 @@
 .stats{
     margin:15px;
     font-size: 25px;
+}
+
+@media screen and (min-width:768px ) and (max-width:992px) {
+    
+    .menuContainer{
+        display:flex;
+        flex-direction:column-reverse;
+        justify-content:center;
+        align-items:center;
+        position: relative;
+}
+
+    .dishDetailContainer{
+        width: 100%;    
+        display:flex;
+       
+        flex-wrap: wrap;
+        justify-content:center;
+        align-items:center;    
+        position:absolute;
+        left:0px;
+        top:0
+}
+.dishDetailContainer div{
+    width: 50%;
+  
+}
+
+.menuStats{
+    width:45%;
+    padding-left:0px;
+    top:-300px;
+    right: 60px;
+}
+
+.stats{
+    margin:15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.card-title{
+    width: 160px;
+}
+.card p{
+    width: 160px;
+}
+
 }

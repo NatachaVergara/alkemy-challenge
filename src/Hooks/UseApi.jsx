@@ -1,17 +1,22 @@
-/* eslint-disable no-unused-vars */
+
+//import React from 'react'
+
 import axios from 'axios'
 
 
-const UseApi = async ({ query, setRecetas}) => {
-  const api1 = `c2523e962c50421f824985aed4f8132a`
+const UseApi = async ({ query, setRecetas }) => {
+  const api1y = `24f235a649d44e499d188ea2acc82e7d`
+  const ap2g = 'bcdb654fd44d4a9692e33796af4230b4'
 
-  const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${api1}&query=${query}&addRecipeInformation=true&number=50`
-  
+  const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${api1y}&query=${query}&addRecipeInformation=true&number=50`
+
+  //const { setApiSearch} = useMenuContext()
+
 
   await axios.get(url)
     .then(res => setRecetas(res.data.results))
     .catch(err => console.error(err))
-    
+
 }
 
 export default UseApi

@@ -9,7 +9,7 @@ const MenuDetail = () => {
     <div className="dishDetailContainer row">
       {
         menuList.map(menu => {
-          return <DishDetail btn='borrar' key={menu.id} id={menu.id} img={menu.image} width='15rem' title={menu.title} vegan={menu.vegan} pClass='col-6 mb-5' desc={menu.summary}  />
+          return <DishDetail btn='Erase' key={menu.id} id={menu.id} img={menu.image} width='15rem' title={menu.title} vegan={menu.vegan} pClass='col-6 mb-5' desc={menu.summary}  />
         })
       }
       
