@@ -16,6 +16,36 @@
     position:absolute;
     left:0
 }
+/*This is shown only when my menuList is empty*/
+.menuEmpty{
+    background-color: rgba(0, 0, 0, 0.582);
+    width: 45%;
+    margin:90px auto;
+    color:aliceblue;
+}
+.menuEmpty h1{
+    text-align: center;
+    padding:15px;
+}
+
+.menuEmpty p{
+    text-align: center;
+    padding:15px;
+    font-size:20px;
+    
+}
+
+.menuEmpty p ul{
+   list-style: none
+
+}
+
+
+.menuEmpty p ul li{
+   padding: 15px;
+}
+
+/*Fin*/
 
 
 .menuStats{
@@ -148,6 +178,7 @@
 /*Celulares - xs de bootstrap*/
 
 @media screen and (max-width:575px ){
+
     .menuContainer{
         display:flex;
         flex-direction:column-reverse;
@@ -157,8 +188,41 @@
 }
 
 
+/*This is shown only when my menuList is empty*/
+.menuEmpty{
+    
+    width: 90%;
+    margin:90px auto;
+   
+}
+.menuEmpty h1{
+    text-align: center;
+    padding:15px;
+}
+
+.menuEmpty p{
+    text-align: center;
+    padding:15px;
+    font-size:20px;
+    
+}
+
+.menuEmpty p ul{
+   list-style: none
+
+}
+
+
+.menuEmpty p ul li{
+   padding: 15px;
+}
+
+/*Fin*/
+
+
+
     .dishDetailContainer{
-        width: 50%;    
+        width: 100%;    
         display:flex;
         flex-direction:column;
         justify-content:center;
