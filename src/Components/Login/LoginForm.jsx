@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from 'formik';
 import ModalMensajes from '../Modales/ModalMensajes';
+import { error } from '../Alerts/Alerts';
 
 const LoginForm = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -41,6 +42,9 @@ const LoginForm = () => {
                     //Validacion password
                     if (!valores.password) {
                         isError.password = 'Por favor ingrese su contraseña'
+
+                        
+
                     }
 
                     return isError
@@ -51,31 +55,32 @@ const LoginForm = () => {
                 onSubmit={(valores, { resetForm }) => {
                    let isUser = JSON.parse(localStorage.getItem('token'))
 
-                    if (isUser.email !== valores.email && isUser.password === valores.password) {                                               
-                        setStartModal(true)                                              
-                        setModalMsj(`El correo electronico ingresado no se encuentra registrado, asegurese de haberlo ingresado correctamente`)
-
+                    if (isUser.email !== valores.email && isUser.password === valores.password) {
+                        error(`El correo electronico ingresado no se encuentra registrado, asegurese de haberlo ingresado correctamente`)
+                     
                     }
 
                     if (isUser.email === valores.email && isUser.password !== valores.password) {                      
-                        
-                        setStartModal(true)
-                        setModalMsj(`La contraseña ingresada no corresponde con el mail ingresado, asegurese de habelo ingresado correctamente`)
+                        error(`La contraseña ingresada no corresponde con el mail ingresado, asegurese de habelo ingresado correctamente`)
+                       
                        
                     }
 
                     if (isUser.email !== valores.email && isUser.password !== valores.password) {
-                        setStartModal(true)  
-                        setModalMsj(`Tanto el email como la contraseña ingresados están incorrectos, por favor revise la información y vuelva a intentar`)
+                    
+                        error('Tanto el email como la contraseña ingresados están incorrectos, por favor revise la información y vuelva a intentar')
+
                     }
 
 
 
                     if (isUser.email === valores.email && isUser.password === valores.password) {
                         resetForm()
-                        setStartModal(true)
+                         setStartModal(true)
                         setIsLoggedIn(true)
                         console.log('usuario logeado/Formik funcionando')
+                       
+
                         setModalMsj('Bienvenido/a nuevamente, lo estamos enviado a su menu')
                         setTimeout(() => {
                             setStartModal(false)

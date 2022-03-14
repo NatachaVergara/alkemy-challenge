@@ -3,25 +3,25 @@ import withReactContent from 'sweetalert2-react-content'
 
 
 
-export const successDishAlert = (ItemTitle, text) => {
+export const success = (ItemTitle, text) => {
     const MySwal = withReactContent(Swal)
+            Swal.fire({
+            title: ItemTitle,
+            text: text
 
-    Swal.fire({
-        title: ItemTitle,
-        text: text ,
-        
-    })
-    
+        })
     return MySwal
 } 
 
-export const errorDishes = (text) => {
+export const error = (text) => {
     const MySwal = withReactContent(Swal)
-
+    
     Swal.fire({
         icon: 'error',
-        title: text               
+        title: text
+        
     })
+    
 
     return MySwal
 }

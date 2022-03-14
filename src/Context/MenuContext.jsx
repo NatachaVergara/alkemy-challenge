@@ -1,6 +1,6 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react'
-import { errorDishes, successDishAlert } from '../Components/Alerts/Alerts'
+import { error, success } from '../Components/Alerts/Alerts'
 
 const MenuContext = createContext([])
 
@@ -38,17 +38,17 @@ const MenuContextProvider = ({ children }) => {
         if (inMenuList) {
             setMenuList([...menuList])
             text = 'Puede agregar un plato por menu'
-            errorDishes(text)
+            error(text)
         } else {
             setMenuList([...menuList, { ...receta }])
             text = 'Plato agregado satisfactoriamente'
-            successDishAlert(receta.title, text)
+            success(receta.title, text)
         }
 
         if (isVegan.length === 2) {
             setMenuList([...menuList])
             text = 'Puede agregar solo 2 platos veganos o 2 no veganos'
-            errorDishes(text)
+            error(text)
         } 
         
 
@@ -58,7 +58,7 @@ const MenuContextProvider = ({ children }) => {
         if (menuList.length === 4) {
             setMenuList([...menuList])
             text = 'Puede agregar solo hasta 4 platos'
-            errorDishes(text)
+            error(text)
         }
         
        
