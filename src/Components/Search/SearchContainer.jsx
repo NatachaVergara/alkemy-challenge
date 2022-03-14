@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import UseApi from '../../Hooks/UseApi'
 import SearchForm from './SearchForm'
 import DishDetailContainer from '../DishDetail/DishDetailContainer'
+import './SearchDetailContainer.css'
 
 const getLocalApi = () => {
   let items = localStorage.getItem('apiSearchLS')
@@ -41,7 +42,7 @@ const Search = () => {
   return (
     <>
       <SearchForm setQuery={setQuery} />
-      <div className="dishDetailSearch container ms-md-5 row">
+      <div className="dishDetailSearch container ms-md-5 row mb-lg-5">
         <DishDetailContainer  recetas={recetas} />
       </div>
     </>

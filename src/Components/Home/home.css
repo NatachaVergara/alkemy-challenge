@@ -9,14 +9,32 @@
     justify-content:center;
     align-items:center;
     flex-wrap: wrap;
+    
 }
+
+
+/*Tables- md de bootstrap */
 @media screen and (min-width:768px ) and (max-width:992px){
     .search{
         margin-top: 514px;
     }
 }
+/*Celulares landscape - sm de bootstrap*/
+@media screen and (min-width:576px ) and (max-width:767px){
+    .search{
+        margin: 500px auto 50px;
+            width: 90%;
+        
+    }
+}
 
 
+/*Celulares - xs de bootstrap*/
 
-
-
+@media screen and (max-width:575px ){
+.search{
+       margin: 1100px auto 50px;
+        width: 90%;
+       
+    }
+}

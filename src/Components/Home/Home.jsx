@@ -16,7 +16,7 @@ const Home = () => {
         <section className="menu">
           <MenuContainer />   
         </section>
-        <section className="search ">
+        <section className="search">
           <Search />
         </section>
      

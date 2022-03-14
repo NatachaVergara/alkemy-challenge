@@ -35,6 +35,8 @@
     font-size: 25px;
 }
 
+/*Tables- md de bootstrap */
+
 @media screen and (min-width:768px ) and (max-width:992px) {
     
     .menuContainer{
@@ -44,6 +46,75 @@
         align-items:center;
         position: relative;
 }
+    .menuStats{
+        width:45%;
+        padding-left:0px;
+        top:-300px;
+        right: 60px;
+    }
+
+    .stats{
+        margin:15px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+
+    .dishDetailContainer{
+        width: 100%;    
+        display:flex;
+       
+        flex-wrap: wrap;
+        justify-content:center;
+        align-items:center;    
+        position:absolute;
+        left:0px;
+        top:0
+    }
+    .dishDetailContainer div{
+        width: 50%;
+    
+    }
+
+    /*Dentro de las card de dishDetailContainer*/
+    .card-title{
+        width: 160px;
+    }
+    .card p{
+        width: 160px;
+    }
+
+
+
+
+}
+
+/*Celulares landscape - sm de bootstrap*/
+@media screen and (min-width:576px ) and (max-width:767px){
+    .menuContainer{
+        display:flex;
+        flex-direction:column-reverse;
+        justify-content:center;
+        align-items:center;
+        position: relative;
+       
+}
+
+    .menuStats{
+        width:45%;
+        padding-left:0px;
+        top: -365px;
+        right: 50px;
+}
+    
+
+    .stats{
+        margin:15px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+
 
     .dishDetailContainer{
         width: 100%;    
@@ -56,30 +127,76 @@
         left:0px;
         top:0
 }
-.dishDetailContainer div{
-    width: 50%;
-  
-}
+    .dishDetailContainer div{
+        width: 50%;
+    
+    }
+    /*Dentro de las card de dishDetailContainer*/
+    .card-title{
+        width: 160px;
+    }
+    .card p{
+        width: 160px;
+    }
 
-.menuStats{
-    width:45%;
-    padding-left:0px;
-    top:-300px;
-    right: 60px;
-}
-
-.stats{
-    margin:15px;
-    font-size: 20px;
-    text-align: center;
+    
 }
 
 
-.card-title{
-    width: 160px;
+
+
+/*Celulares - xs de bootstrap*/
+
+@media screen and (max-width:575px ){
+    .menuContainer{
+        display:flex;
+        flex-direction:column-reverse;
+        justify-content:center;
+        align-items:center;
+        position: relative;
 }
-.card p{
-    width: 160px;
+
+
+    .dishDetailContainer{
+        width: 50%;    
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;    
+        position:absolute;
+        left:0px;
+        top:-200px
 }
+
+    .dishDetailContainer div{
+        width: 50%;
+        
+    
+    }
+
+
+    /*Dentro de las card de dishDetailContainer*/
+    .card-title{
+        width: 180px;
+    }
+    .card p{
+        width: 180px;
+    }
+
+    .menuStats{
+       width: 50%;
+        margin: auto;
+        padding-left: 0px;
+        left: 146px;
+        top: -420px;
+        right: 60px;
+    }
+
+    .stats{
+        margin:10px;
+        font-size: 10px;
+        text-align: center;
+    }
+
 
 }
