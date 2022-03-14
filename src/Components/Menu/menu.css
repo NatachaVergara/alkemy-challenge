@@ -9,6 +9,7 @@
 
 .dishDetailContainer{
     width: 50%;    
+    margin-top: 52px;
     display:flex;
     flex-wrap: wrap;
     justify-content:center;
@@ -51,7 +52,7 @@
 .menuStats{
     padding-left:80px;
     position:absolute;
-    right: 140px;
+    right: 240px;
     
 
     display:flex;

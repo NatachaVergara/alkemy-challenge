@@ -6,13 +6,13 @@ import axios from 'axios'
 
 const UseApi = async ({ query, setRecetas }) => {
   //ntch yahoo
-  const api1y = `24f235a649d44e499d188ea2acc82e7d`
+ // const api1 = `24f235a649d44e499d188ea2acc82e7d`
   
   //ntch gmail
-  //const ap2g = 'bcdb654fd44d4a9692e33796af4230b4'
+ // const api2 = 'bcdb654fd44d4a9692e33796af4230b4'
   
   //todo.hotmail
-   const api3 = 'a2ff818ee82c4b92b30209b18a1327fd'  
+  const api3 = 'a2ff818ee82c4b92b30209b18a1327fd'  
 
   const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${api3}&query=${query}&addRecipeInformation=true&number=50`
 

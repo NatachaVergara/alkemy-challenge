@@ -8,7 +8,7 @@ const MenuDetail = () => {
 
   return (
     <>
-      {menuList.length === 0 ? <MenuDetailEmpty /> : <div className="dishDetailContainer row">
+      {menuList.length === 0 ? <MenuDetailEmpty /> : <div className="dishDetailContainer mt-lg-3 pt-lg-3 row">
         {
           menuList.map(menu => {
             return <DishDetail btn='Delete' key={menu.id} id={menu.id} img={menu.image} width='15rem' title={menu.title} vegan={menu.vegan} pClass='col-6 mb-5' desc={menu.summary} />

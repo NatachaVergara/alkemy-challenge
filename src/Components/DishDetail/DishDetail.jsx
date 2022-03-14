@@ -4,7 +4,7 @@ import { useMenuContext } from '../../Context/MenuContext'
 import ModalVermas from '../Modales/ModalVermas';
 
 
-const DishDetail = ({ btn, title, id, img, desc, width, receta, pClass, vegan }) => {
+const DishDetail = ({ btn, title, id, img, desc, width, receta, pClass, vegan, glutenFree, dairyFree, vegetarian }) => {
   const [show, setShow] = useState(false);
   const { addMenuItem, eraseMenuItem } = useMenuContext()
 
@@ -18,9 +18,12 @@ const DishDetail = ({ btn, title, id, img, desc, width, receta, pClass, vegan })
           <img src={img} className="card-img-top" alt={title} />
           <div className="card-body">
             <h5 className="card-title" >{title} </h5>
-            {/* <p className="card-text text-danger text-center" dangerouslySetInnerHTML={{ __html: desc }} /> */}
-            <p>Es vegano : {vegan === true ? 'true' : 'false'} </p>
-            {btn === 'agregar' ? <button onClick={() => addMenuItem(receta)}
+            <p>Is vegan : {vegan === true ? '☑️' : '❎'} </p>
+            <p>Is Vegetarian : {vegetarian === true ? '☑️' : '❎'} </p>
+            <p>Is gluten Free : {glutenFree === true ? '☑️' : '❎'} </p>
+            <p>Is dairy Free : {dairyFree === true ? '☑️' : '❎'} </p>
+            
+            {btn === 'add' ? <button onClick={() => addMenuItem(receta)}
               className="btn btn-primary"  >{btn}
             </button> :
               <button onClick={() => eraseMenuItem(id)}
@@ -29,7 +32,7 @@ const DishDetail = ({ btn, title, id, img, desc, width, receta, pClass, vegan })
             }
             <a className="btn"
               onClick={handleShow}              
-            >ver más</a>
+            >more info</a>
           </div>
         </div>
       </div>
